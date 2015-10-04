@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+        <!-- Window Background -->
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <!-- AppCompat Colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+
+
+
+    <style name="Subject">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="robotoFont"> BlackItalic</item>
+    </style>
+
+    <style name="Author">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="robotoFont"> BlackItalic</item>
+    </style>
+
+    <style name="Body1">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="robotoFont">Regular</item>
+    </style>
+
+
+</resources>

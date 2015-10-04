@@ -27,12 +27,12 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
 
     @Override
     public void onBindViewHolder(ViewAdapterViewHolder viewAdapterViewHolder, int i) {
-//TODO: populate
+        viewAdapterViewHolder.previewLayout.populate(mEmailPreviewList.get(i));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mEmailPreviewList.size();
     }
 
     protected static class ViewAdapterViewHolder extends RecyclerView.ViewHolder{

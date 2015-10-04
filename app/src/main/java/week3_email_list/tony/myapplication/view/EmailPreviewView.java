@@ -24,10 +24,12 @@ public class EmailPreviewView extends RelativeLayout {
 
     public EmailPreviewView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public EmailPreviewView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -44,6 +46,7 @@ public class EmailPreviewView extends RelativeLayout {
     }
 
     public void populate(EmailPreview emailPreview){
+        //TODO: not sure why setText invokes on a null object reference
         author.setText(emailPreview.getAuthor());
         subject.setText(emailPreview.getSubject());
         body.setText(emailPreview.getBody());

@@ -6,7 +6,6 @@
     android:background="@drawable/list_selector">
 
     <TextView
-        style="@style/Subject"
         android:id="@+id/tv_email_callout"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -19,7 +18,6 @@
 
 
     <TextView
-        style="@style/Subject"
         android:id="@+id/tv_email_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +25,6 @@
         android:text="You've won!"/>
 
     <TextView
-        style="@style/Author"
         android:id="@+id/tv_email_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +33,6 @@
         android:text="@string/placeholder_author"/>
 
     <TextView
-        style="@style/Body1"
         android:id="@+id/tv_email_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

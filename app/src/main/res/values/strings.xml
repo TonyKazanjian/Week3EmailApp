@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Week 3 Email List</string>
-    <string name="placeholder_subject">You won!</string>
-    <string name="placeholder_author">Bruce Wayne</string>
-    <string name="placeholder_content">Congratulations! You\'ve won a lifetime supply of absolutely nothing!</string>
+    <string name="placeholder_subject">Patience!</string>
+    <string name="placeholder_author">Master Yoda</string>
+    <string name="placeholder_content">Patience you must have, my young padawan.</string>
     <string name="action_settings">Settings</string>
 </resources>

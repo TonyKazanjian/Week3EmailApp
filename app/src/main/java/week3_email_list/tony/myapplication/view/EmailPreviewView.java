@@ -1,10 +1,8 @@
 package week3_email_list.tony.myapplication.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import week3_email_list.tony.myapplication.R;
@@ -13,18 +11,18 @@ import week3_email_list.tony.myapplication.model.EmailPreview;
 /**
  * Created by tonyk_000 on 10/4/2015.
  */
-public class EmailPreviewView extends RelativeLayout {
+public class EmailPreviewView extends LinearLayout {
 
     TextView author;
     TextView subject;
     TextView body;
+
     public EmailPreviewView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public EmailPreviewView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public EmailPreviewView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -32,14 +30,9 @@ public class EmailPreviewView extends RelativeLayout {
         init();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public EmailPreviewView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
     private void init(){
-        inflate(this.getContext(), R.layout.preview_email,this);
+        this.setOrientation(LinearLayout.HORIZONTAL);
+        inflate(this.getContext(), R.layout.preview_email, this);
         author = (TextView) findViewById(R.id.tv_email_author);
         subject = (TextView) findViewById(R.id.tv_email_subject);
         body = (TextView) findViewById(R.id.tv_email_content);

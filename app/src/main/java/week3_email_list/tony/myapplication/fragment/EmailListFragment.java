@@ -1,55 +1,48 @@
-package week3_email_list.tony.myapplication;
+package week3_email_list.tony.myapplication.fragment;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import week3_email_list.tony.myapplication.R;
 import week3_email_list.tony.myapplication.model.EmailPreview;
 import week3_email_list.tony.myapplication.view.ViewAdapter;
 
-public class EmailActivity extends FragmentActivity {
+/**
+ * Created by tonyk_000 on 10/27/2015.
+ */
+public class EmailListFragment extends Fragment {
 
     private List<EmailPreview> emailList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private ViewAdapter mViewAdapter;
 
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email);
-        mRecyclerView = (RecyclerView)findViewById(R.id.rv_email_list);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        final View view = inflater.inflate(R.layout.activity_email, container, false);
+
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.rv_email_list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         mViewAdapter = new ViewAdapter(createMockContent());
         mRecyclerView.setAdapter(mViewAdapter);
-    }
+        // Inflate the layout for this fragment
+        return view;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_email, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private List<EmailPreview> createMockContent(){
@@ -77,4 +70,5 @@ public class EmailActivity extends FragmentActivity {
 
         return emailList;
     }
+
 }

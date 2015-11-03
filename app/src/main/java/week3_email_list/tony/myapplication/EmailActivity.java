@@ -2,8 +2,6 @@ package week3_email_list.tony.myapplication;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,23 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import week3_email_list.tony.myapplication.model.EmailPreview;
-import week3_email_list.tony.myapplication.view.ViewAdapter;
 
 public class EmailActivity extends FragmentActivity {
 
     private List<EmailPreview> emailList = new ArrayList<>();
-    private RecyclerView mRecyclerView;
-    private ViewAdapter mViewAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
-        mRecyclerView = (RecyclerView)findViewById(R.id.rv_email_list);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mViewAdapter = new ViewAdapter(createMockContent());
-        mRecyclerView.setAdapter(mViewAdapter);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package week3_email_list.tony.myapplication.fragment;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,8 +25,8 @@ public class EmailListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ViewAdapter mViewAdapter;
 
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onCreate (Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
     }
 
 
@@ -34,12 +34,28 @@ public class EmailListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final View view = inflater.inflate(R.layout.activity_email, container, false);
+        final View view = inflater.inflate(R.layout.fragment_email_list, container, false);
 
         mRecyclerView = (RecyclerView)view.findViewById(R.id.rv_email_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         mViewAdapter = new ViewAdapter(createMockContent());
         mRecyclerView.setAdapter(mViewAdapter);
+
+        mRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                Fragment fragment = fm.findFragmentById(R.id.email_detail_fragment);
+
+                if (fragment == null) {
+                    fragment = new EmailDetailFragment();
+                    fm.beginTransaction()
+                            .add(R.id.email_detail_fragment, fragment)
+                            .commit();
+                }
+
+            }
+        });
         // Inflate the layout for this fragment
         return view;
 

@@ -2,15 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"  tools:context=".MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_email_list"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
-
     <fragment
         android:id="@+id/email_list_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:name="week3_email_list.tony.myapplication.fragment.EmailListFragment"
+        tools:layout="@layout/activity_email">
 
     </fragment>
 

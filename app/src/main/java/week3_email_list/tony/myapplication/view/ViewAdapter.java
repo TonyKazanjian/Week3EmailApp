@@ -1,20 +1,39 @@
 package week3_email_list.tony.myapplication.view;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import week3_email_list.tony.myapplication.EmailDetailActivity;
+import week3_email_list.tony.myapplication.ItemListener;
 import week3_email_list.tony.myapplication.model.EmailPreview;
 
 /**
  * Created by tonyk_000 on 10/4/2015.
  */
-public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterViewHolder>{
+public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterViewHolder> implements ItemListener{
 
     private List<EmailPreview> mEmailPreviewList = new ArrayList<>();
+    private ItemListener itemListener = new ItemListener() {
+        @Override
+        public void itemClicked(EmailPreview email) {
+            ViewAdapterViewHolder.previewLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, EmailDetailActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+        }
+    };
+
 
     public ViewAdapter(List<EmailPreview> emailPreviewList) {
         mEmailPreviewList = emailPreviewList;
@@ -26,8 +45,9 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
     }
 
     @Override
-    public void onBindViewHolder(ViewAdapterViewHolder viewAdapterViewHolder, int i) {
+    public void onBindViewHolder(ViewAdapterViewHolder viewAdapterViewHolder, final int i) {
         viewAdapterViewHolder.previewLayout.populate(mEmailPreviewList.get(i));
+        itemListener.itemClicked(mEmailPreviewList.get(i));
     }
 
     @Override
@@ -35,9 +55,14 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
         return mEmailPreviewList.size();
     }
 
+    @Override
+    public void itemClicked(EmailPreview email) {
+
+    }
+
     protected static class ViewAdapterViewHolder extends RecyclerView.ViewHolder{
 
-        public EmailPreviewView previewLayout;
+        public static EmailPreviewView previewLayout;
 
         public ViewAdapterViewHolder(EmailPreviewView emailView) {
             super(emailView);

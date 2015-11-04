@@ -2,7 +2,6 @@ package week3_email_list.tony.myapplication.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,21 +40,6 @@ public class EmailListFragment extends Fragment {
         mViewAdapter = new ViewAdapter(createMockContent());
         mRecyclerView.setAdapter(mViewAdapter);
 
-        mRecyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                Fragment fragment = fm.findFragmentById(R.id.email_detail_fragment);
-
-                if (fragment == null) {
-                    fragment = new EmailDetailFragment();
-                    fm.beginTransaction()
-                            .add(R.id.email_detail_fragment, fragment)
-                            .commit();
-                }
-
-            }
-        });
         // Inflate the layout for this fragment
         return view;
 

@@ -5,10 +5,8 @@ package week3_email_list.tony.myapplication.model;
  */
 public class EmailDetail {
 
-    private String subject;
-    private String body;
-    private String author;
     private String date;
+    private EmailPreview emailPreview;
 
     public String getDate() {
         return date;
@@ -19,32 +17,18 @@ public class EmailDetail {
     }
 
     public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
+        return emailPreview.getSubject();
     }
 
     public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
+        return emailPreview.getBody();
     }
 
     public String getAuthor() {
-        return author;
+        return emailPreview.getAuthor();
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public EmailDetail (String subject, String body, String author) {
-        this.subject = subject;
-        this.body = body;
-        this.author = author;
+    public EmailDetail (EmailPreview emailPreview) {
+        emailPreview = new EmailPreview(emailPreview.getSubject(),emailPreview.getBody(),emailPreview.getAuthor());
     }
 }

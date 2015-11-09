@@ -41,30 +41,4 @@ public class EmailActivity extends FragmentActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    private List<EmailPreview> createMockContent(){
-        EmailPreview emailPreview1 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview2 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview3 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview4 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview5 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview6 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview7 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview8 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview9 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-        EmailPreview emailPreview10 = new EmailPreview(getString(R.string.placeholder_subject), getString(R.string.placeholder_content),getString(R.string.placeholder_author));
-
-        emailList.add(emailPreview1);
-        emailList.add(emailPreview2);
-        emailList.add(emailPreview3);
-        emailList.add(emailPreview4);
-        emailList.add(emailPreview5);
-        emailList.add(emailPreview6);
-        emailList.add(emailPreview7);
-        emailList.add(emailPreview8);
-        emailList.add(emailPreview9);
-        emailList.add(emailPreview10);
-
-        return emailList;
-    }
 }

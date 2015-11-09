@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import week3_email_list.tony.myapplication.R;
+import week3_email_list.tony.myapplication.model.EmailDetail;
 import week3_email_list.tony.myapplication.view.ViewAdapter;
 
 /**
@@ -27,6 +29,10 @@ public class EmailDetailFragment extends Fragment {
     private ImageButton mOverflow;
     private ImageButton mTrash;
     private ImageButton mBackArrow;
+
+    private Toolbar mToolbar;
+
+    private EmailDetail mEmailDetail;
 
     LinearLayout mLinearLayout;
     private ViewAdapter mViewAdapter;
@@ -50,6 +56,8 @@ public class EmailDetailFragment extends Fragment {
         mOverflow = (ImageButton) v.findViewById(R.id.btn_overflow);
         mTrash = (ImageButton) v.findViewById(R.id.btn_trash);
         mBackArrow = (ImageButton) v.findViewById(R.id.btn_back_arrow);
+
+        mToolbar = (Toolbar) v.findViewById(R.id.tb_email_detail);
 
         return v;
     }

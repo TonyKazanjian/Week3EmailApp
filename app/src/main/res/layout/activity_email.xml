@@ -6,8 +6,9 @@
         android:id="@+id/email_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="week3_email_list.tony.myapplication.fragment.EmailListFragment"
-        tools:layout="@layout/activity_email">
+        tools:layout="@layout/activity_email"
+        android:name="week3_email_list.tony.myapplication.fragment.EmailListFragment">
+
 
     </fragment>
 

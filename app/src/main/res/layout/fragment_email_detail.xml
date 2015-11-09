@@ -8,7 +8,8 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tb_email_detail">
+        android:id="@+id/tb_email_detail"
+        android:background="@color/red">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -16,14 +17,19 @@
             android:id="@+id/btn_back_arrow"
             android:src="@drawable/arrow_left"
             android:layout_gravity="left"
-            />
+            android:clickable="true"
+            android:background="@null"
+            android:padding="12dp"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_trash"
             android:src="@drawable/delete"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
     </Toolbar>
 
@@ -44,7 +50,10 @@
             android:src="@drawable/reply_all"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/btn_overflow"
-            android:layout_toStartOf="@+id/btn_overflow"/>
+            android:layout_toStartOf="@+id/btn_overflow"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -53,7 +62,10 @@
             android:src="@drawable/ic_overflow_menu"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -88,21 +100,30 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_reply"
             android:src="@drawable/reply"
-            android:layout_marginRight="80dp"/>
+            android:layout_marginRight="80dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@id/btn_reply_all"
             android:src="@drawable/reply_all"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_forward"
             android:src="@drawable/forward"
-            android:layout_marginLeft="80dp"/>
+            android:layout_marginLeft="80dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:clickable="true"/>
 
 
 

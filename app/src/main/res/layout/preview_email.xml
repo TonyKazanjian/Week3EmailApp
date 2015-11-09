@@ -9,11 +9,10 @@
         android:layout_height="40dp"
         android:layout_marginRight="16dp"
         android:text="A"
-        android:gravity="center"
-        android:background="@android:color/black"/>
+        android:gravity="center"/>
 
     <LinearLayout android:layout_width = "0dp"
-                  android:layout_height = "wrap_content"
+                  android:layout_height = "72dp"
                   android:orientation="vertical"
                   android:layout_weight="1">
 
@@ -21,19 +20,19 @@
             android:id="@+id/tv_email_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="You've won!"/>
+            android:text="@string/placeholder_subject1"/>
 
         <TextView
             android:id="@+id/tv_email_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/placeholder_author"/>
+            android:text="@string/placeholder_author1"/>
 
         <TextView
             android:id="@+id/tv_email_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/placeholder_content"
+            android:text="@string/placeholder_content1"
             android:lines="1"
             android:ellipsize="end"/>
 

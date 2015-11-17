@@ -12,6 +12,7 @@ import java.util.List;
 
 import week3_email_list.tony.myapplication.EmailDetailActivity;
 import week3_email_list.tony.myapplication.ItemListener;
+import week3_email_list.tony.myapplication.model.Email;
 import week3_email_list.tony.myapplication.model.EmailPreview;
 
 /**
@@ -19,7 +20,7 @@ import week3_email_list.tony.myapplication.model.EmailPreview;
  */
 public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterViewHolder> implements ItemListener{
 
-    private List<EmailPreview> mEmailPreviewList = new ArrayList<>();
+    private List<Email> mEmailPreviewList = new ArrayList<>();
     private ItemListener itemListener = new ItemListener() {
         @Override
         public void itemClicked(EmailPreview email) {
@@ -35,7 +36,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
     };
 
 
-    public ViewAdapter(List<EmailPreview> emailPreviewList) {
+    public ViewAdapter(List<Email> emailPreviewList) {
         mEmailPreviewList = emailPreviewList;
     }
 
@@ -47,7 +48,6 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
     @Override
     public void onBindViewHolder(ViewAdapterViewHolder viewAdapterViewHolder, final int i) {
         viewAdapterViewHolder.previewLayout.populate(mEmailPreviewList.get(i));
-        itemListener.itemClicked(mEmailPreviewList.get(i));
     }
 
     @Override

@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import week3_email_list.tony.myapplication.R;
-import week3_email_list.tony.myapplication.model.EmailPreview;
+import week3_email_list.tony.myapplication.model.Email;
 
 /**
  * Created by tonyk_000 on 10/4/2015.
@@ -38,8 +38,7 @@ public class EmailPreviewView extends LinearLayout {
         body = (TextView) findViewById(R.id.tv_email_content);
     }
 
-    public void populate(EmailPreview emailPreview){
-        //TODO: not sure why setText invokes on a null object reference
+    public void populate(Email emailPreview){
         author.setText(emailPreview.getAuthor());
         subject.setText(emailPreview.getSubject());
         body.setText(emailPreview.getBody());

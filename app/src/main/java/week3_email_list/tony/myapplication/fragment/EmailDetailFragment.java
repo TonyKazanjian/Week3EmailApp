@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 import week3_email_list.tony.myapplication.R;
-import week3_email_list.tony.myapplication.model.EmailDetail;
+import week3_email_list.tony.myapplication.model.Email;
 import week3_email_list.tony.myapplication.view.ViewAdapter;
 
 /**
@@ -32,7 +32,7 @@ public class EmailDetailFragment extends Fragment {
 
     private Toolbar mToolbar;
 
-    private EmailDetail mEmailDetail;
+    private Email mEmail;
 
     LinearLayout mLinearLayout;
     private ViewAdapter mViewAdapter;

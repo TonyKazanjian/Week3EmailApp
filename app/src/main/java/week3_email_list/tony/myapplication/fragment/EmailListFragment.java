@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import week3_email_list.tony.myapplication.R;
-import week3_email_list.tony.myapplication.model.EmailPreview;
+import week3_email_list.tony.myapplication.model.Email;
 import week3_email_list.tony.myapplication.view.ViewAdapter;
 
 /**
@@ -20,7 +20,7 @@ import week3_email_list.tony.myapplication.view.ViewAdapter;
  */
 public class EmailListFragment extends Fragment {
 
-    private List<EmailPreview> emailList = new ArrayList<>();
+    private List<Email> emailList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private ViewAdapter mViewAdapter;
 
@@ -45,17 +45,17 @@ public class EmailListFragment extends Fragment {
 
     }
 
-    private List<EmailPreview> createMockContent(){
-        EmailPreview emailPreview1 = new EmailPreview(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
-        EmailPreview emailPreview2 = new EmailPreview(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
-        EmailPreview emailPreview3 = new EmailPreview(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
-        EmailPreview emailPreview4 = new EmailPreview(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
-        EmailPreview emailPreview5 = new EmailPreview(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
-        EmailPreview emailPreview6 = new EmailPreview(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
-        EmailPreview emailPreview7 = new EmailPreview(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
-        EmailPreview emailPreview8 = new EmailPreview(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
-        EmailPreview emailPreview9 = new EmailPreview(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
-        EmailPreview emailPreview10 = new EmailPreview(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
+    private List<Email> createMockContent(){
+        Email emailPreview1 = new Email(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
+        Email emailPreview2 = new Email(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
+        Email emailPreview3 = new Email(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
+        Email emailPreview4 = new Email(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
+        Email emailPreview5 = new Email(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
+        Email emailPreview6 = new Email(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
+        Email emailPreview7 = new Email(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
+        Email emailPreview8 = new Email(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
+        Email emailPreview9 = new Email(getString(R.string.placeholder_subject1), getString(R.string.placeholder_content1),getString(R.string.placeholder_author1));
+        Email emailPreview10 = new Email(getString(R.string.placeholder_subject2), getString(R.string.placeholder_content2),getString(R.string.placeholder_author2));
 
         emailList.add(emailPreview1);
         emailList.add(emailPreview2);

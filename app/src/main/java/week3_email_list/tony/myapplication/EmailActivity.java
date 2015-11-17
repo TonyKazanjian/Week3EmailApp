@@ -1,18 +1,23 @@
 package week3_email_list.tony.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import week3_email_list.tony.myapplication.model.EmailPreview;
+import java.util.UUID;
 
 public class EmailActivity extends FragmentActivity {
 
-    private List<EmailPreview> emailList = new ArrayList<>();
+    public static final String EXTRA_EMAIL_ID = "email id";
+
+    public static Intent newIntent(Context packageContext, UUID emailId){
+        Intent intent = new Intent(packageContext, EmailActivity.class);
+        intent.putExtra(EXTRA_EMAIL_ID, emailId);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

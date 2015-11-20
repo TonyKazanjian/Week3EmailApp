@@ -6,13 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import week3_email_list.tony.myapplication.EmailListActivity;
 import week3_email_list.tony.myapplication.R;
 import week3_email_list.tony.myapplication.model.Email;
-import week3_email_list.tony.myapplication.view.ViewAdapter;
 
 /**
  * Created by tonyk_000 on 10/28/2015.
@@ -32,13 +31,12 @@ public class EmailDetailFragment extends Fragment {
 
     private Toolbar mToolbar;
 
-    private Email mEmail;
-
-    LinearLayout mLinearLayout;
-    private ViewAdapter mViewAdapter;
+    Email mEmail;
 
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        Bundle b = getActivity().getIntent().getExtras();
+        mEmail = b.getParcelable(EmailListActivity.EXTRA_EMAIL);
     }
 
 
@@ -47,9 +45,12 @@ public class EmailDetailFragment extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_email_detail, container, false);
 
         mSubjectHeader = (TextView)v.findViewById(R.id.tv_email_subject);
+        mSubjectHeader.setText(mEmail.getSubject());
         mAuthor = (TextView) v.findViewById(R.id.tv_email_author);
-        mEmailDate = (TextView) v.findViewById(R.id.tv_email_date);
+        mAuthor.setText(mEmail.getAuthor());
         mContent = (TextView) v.findViewById(R.id.tv_email_content);
+        mContent.setText(mEmail.getBody());
+
         mReplyAll = (ImageButton) v.findViewById(R.id.btn_reply_all);
         mReply = (ImageButton) v.findViewById(R.id.btn_reply);
         mForward = (ImageButton) v.findViewById(R.id.btn_forward);

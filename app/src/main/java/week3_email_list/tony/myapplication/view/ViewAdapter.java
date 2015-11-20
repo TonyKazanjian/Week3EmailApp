@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import week3_email_list.tony.myapplication.EmailDetailActivity;
+import week3_email_list.tony.myapplication.EmailListActivity;
 import week3_email_list.tony.myapplication.model.Email;
 
 /**
@@ -53,7 +53,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
         @Override
         public void onClick(View v) {
             Context context = v.getContext();
-            Intent intent = new Intent(context, EmailDetailActivity.class);
+            Intent intent = EmailListActivity.newIntent(context,previewLayout.createMockContent().get(0));
             context.startActivity(intent);
         }
     }

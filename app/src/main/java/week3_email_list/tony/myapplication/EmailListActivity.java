@@ -7,22 +7,16 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.UUID;
+import week3_email_list.tony.myapplication.model.Email;
 
-public class EmailActivity extends FragmentActivity {
+public class EmailListActivity extends FragmentActivity{
 
-    public static final String EXTRA_EMAIL_ID = "email id";
-
-    public static Intent newIntent(Context packageContext, UUID emailId){
-        Intent intent = new Intent(packageContext, EmailActivity.class);
-        intent.putExtra(EXTRA_EMAIL_ID, emailId);
-        return intent;
-    }
+    public static String EXTRA_EMAIL = "email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email);
+        setContentView(R.layout.activity_email_list);
     }
 
     @Override
@@ -45,5 +39,13 @@ public class EmailActivity extends FragmentActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static Intent newIntent(Context packageContext, Email email){
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(packageContext, EmailListActivity.class);
+        bundle.putParcelable(EXTRA_EMAIL, email);
+        intent.putExtras(bundle);
+        return intent;
     }
 }

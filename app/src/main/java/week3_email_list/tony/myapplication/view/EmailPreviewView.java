@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import week3_email_list.tony.myapplication.R;
 import week3_email_list.tony.myapplication.model.Email;
 
@@ -13,9 +16,11 @@ import week3_email_list.tony.myapplication.model.Email;
  */
 public class EmailPreviewView extends LinearLayout {
 
-    TextView author;
-    TextView subject;
-    TextView body;
+    private TextView author;
+    private TextView subject;
+    private TextView body;
+
+    private List<Email> mEmails;
 
     public EmailPreviewView(Context context) {
         this(context, null);
@@ -28,6 +33,21 @@ public class EmailPreviewView extends LinearLayout {
     public EmailPreviewView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+    }
+
+    public List<Email> createMockContent (){
+
+        mEmails = new ArrayList<>();
+
+        for (int i = 0; i < 12; i++){
+            Email email = new Email(R.string.placeholder_author1,R.string.placeholder_content1,R.string.placeholder_subject1);
+            email.setAuthor(R.string.placeholder_author1);
+            email.setSubject(R.string.placeholder_subject1);
+            email.setBody(R.string.placeholder_content1);
+
+            mEmails.add(email);
+        }
+        return mEmails;
     }
 
     private void init(){

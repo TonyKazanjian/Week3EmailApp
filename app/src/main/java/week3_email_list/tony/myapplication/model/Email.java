@@ -1,60 +1,74 @@
 package week3_email_list.tony.myapplication.model;
 
-import java.util.Date;
-import java.util.UUID;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by tonyk_000 on 10/28/2015.
  */
-public class Email {
+public class Email implements Parcelable {
 
-    private Date mDate;
-    private String subject;
-    private String body;
-    private String author;
-    private UUID mId;
+    private int subject;
+    private int body;
+    private int author;
 
-    public UUID getId() {
-        return mId;
-    }
-
-    public Date getDate() {
-        return mDate;
-    }
-
-    public void setDate(Date date) {
-        mDate = date;
-    }
-
-    public String getSubject() {
+    public int getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(int subject) {
         this.subject = subject;
     }
 
-    public String getBody() {
+    public int getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(int body) {
         this.body = body;
     }
 
-    public String getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(int author) {
         this.author = author;
     }
 
-    public Email(String subject, String body, String author) {
+    public Email(int subject, int body, int author) {
         this.subject = subject;
         this.body = body;
         this.author = author;
-        mId = UUID.randomUUID();
-        mDate = new Date();
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.subject);
+        dest.writeInt(this.body);
+        dest.writeInt(this.author);
+    }
+
+    protected Email(Parcel in) {
+        this.subject = in.readInt();
+        this.body = in.readInt();
+        this.author = in.readInt();
+    }
+
+    public static final Creator<Email> CREATOR = new Creator<Email>() {
+        public Email createFromParcel(Parcel source) {
+            return new Email(source);
+        }
+
+        public Email[] newArray(int size) {
+            return new Email[size];
+        }
+    };
 }
+//TODO: pass off email object with putParcelable (create a bundle and call put parcelable)

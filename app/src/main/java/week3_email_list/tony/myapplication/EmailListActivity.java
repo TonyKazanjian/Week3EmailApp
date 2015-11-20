@@ -43,7 +43,7 @@ public class EmailListActivity extends FragmentActivity{
 
     public static Intent newIntent(Context packageContext, Email email){
         Bundle bundle = new Bundle();
-        Intent intent = new Intent(packageContext, EmailListActivity.class);
+        Intent intent = new Intent(packageContext, EmailDetailActivity.class);
         bundle.putParcelable(EXTRA_EMAIL, email);
         intent.putExtras(bundle);
         return intent;

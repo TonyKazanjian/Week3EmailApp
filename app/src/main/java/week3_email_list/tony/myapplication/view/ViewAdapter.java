@@ -53,7 +53,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
         @Override
         public void onClick(View v) {
             Context context = v.getContext();
-            Intent intent = EmailListActivity.newIntent(context,previewLayout.createMockContent().get(0));
+            Intent intent = EmailListActivity.newIntent(context, previewLayout.createMockContent().get(0));
             context.startActivity(intent);
         }
     }

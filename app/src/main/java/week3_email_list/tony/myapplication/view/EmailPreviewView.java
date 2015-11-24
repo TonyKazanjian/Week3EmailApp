@@ -22,6 +22,8 @@ public class EmailPreviewView extends LinearLayout {
 
     private List<Email> mEmails;
 
+    public static Email sEmail;
+
     public EmailPreviewView(Context context) {
         this(context, null);
     }
@@ -46,6 +48,7 @@ public class EmailPreviewView extends LinearLayout {
             email.setBody(R.string.placeholder_content1);
 
             mEmails.add(email);
+            sEmail = mEmails.get(i);
         }
         return mEmails;
     }

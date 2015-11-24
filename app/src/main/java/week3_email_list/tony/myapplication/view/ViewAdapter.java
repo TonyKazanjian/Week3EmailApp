@@ -33,6 +33,14 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
     @Override
     public void onBindViewHolder(ViewAdapterViewHolder viewAdapterViewHolder, final int i) {
         viewAdapterViewHolder.previewLayout.populate(mEmailPreviewList.get(i));
+        viewAdapterViewHolder.previewLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = EmailListActivity.newIntent(context, mEmailPreviewList.get(i));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -40,21 +48,13 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewAdapterVie
         return mEmailPreviewList.size();
     }
 
-    protected static class ViewAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    protected static class ViewAdapterViewHolder extends RecyclerView.ViewHolder {
 
         public static EmailPreviewView previewLayout;
 
         public ViewAdapterViewHolder(EmailPreviewView emailView) {
             super(emailView);
             previewLayout = emailView;
-            previewLayout.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            Context context = v.getContext();
-            Intent intent = EmailListActivity.newIntent(context, previewLayout.createMockContent().get(0));
-            context.startActivity(intent);
         }
     }
 }

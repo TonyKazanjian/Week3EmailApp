@@ -42,6 +42,10 @@ public class Email implements Parcelable {
         this.author = author;
     }
 
+    public Email get(Email email){
+        return this;
+    }
+
 
     @Override
     public int describeContents() {
